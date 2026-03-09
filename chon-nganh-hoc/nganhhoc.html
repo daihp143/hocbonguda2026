@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuyển Sinh Đại Học Đông Á 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            sticky: top;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #01823c;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #01823c;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, #01823c 0%, #004999 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #01823c;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #01823c;
+        }
+
+        /* Sections */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 20px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #01823c;
+            font-weight: 700;
+        }
+
+        /* Programs Section */
+        .programs-category {
+            margin-bottom: 50px;
+        }
+
+        .category-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #01823c;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #01823c;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .program-card {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #01823c;
+            transition: all 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 128, 38, 0.15);
+        }
+
+        .program-card h3 {
+            color: #000000;
+            font-size: 18px;
+        }
+
+        .program-card h3:hover {
+            color: #f15416;
+        }
+
+        .program-card p {
+            color: #000000;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .program-card a {
+            color: #01823c;
+            text-decoration: none;
+        }
+
+        .code {
+            display: inline-block;
+            background: #01823c;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .to-hop {
+            display: block;
+            margin-top: 5px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #000000;
+        }
+
+        .img
+
+        /* Scholarship Section */
+        .scholarship-section {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff0cc 100%);
+        }
+
+        .scholarship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .scholarship-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .scholarship-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .scholarship-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .scholarship-card h3 {
+            color: #01823c;
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .scholarship-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: #f5f5f5;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #01823c, #004999);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .testimonial-card h3 {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .position {
+            color: #01823c;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .quote {
+            color: #666;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 4px solid #01823c;
+        }
+
+        /* Facilities Section */
+        .facilities-section {
+            background: white;
+        }
+
+        .facilities-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .facility-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .facility-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .facility-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #01823c, #004999);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+
+        .facility-name {
+            padding: 15px;
+            text-align: center;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Tuition Info */
+        .tuition-section {
+            background: linear-gradient(135deg, #e6f2ff 0%, #cce5ff 100%);
+        }
+
+        .tuition-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tuition-table th {
+            background: #01823c;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .tuition-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tuition-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 15px;
+            color: #01823c;
+            font-size: 16px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #01823c;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            color: #bbb;
+        }
+
+        /* ToHopMon (subject combinations) Section */
+        .ToHopMon {
+            background: #f3fff0;
+            padding: 60px 20px;
+        }
+
+        .ToHopMon-title {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .ToHopMon-title h4 {
+            font-size: 28px;
+            text-align: center;
+            color: #01823c;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .ToHopMon .list-item {
+            list-style: none;
+            padding-left: 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .ToHopMon .list-item .item {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .ToHopMon .list-item .item strong {
+            color: #01823c;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 36px;
+            color: #01823c;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .nav-menu {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .programs-grid,
+            .scholarship-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Banner
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Tuyển Sinh Đại Học Đông Á 2026</h1>
+            <p>Hơn 40 ngành đào tạo chất lượng cao - Tạo dựng con đường thành công</p>
+            <div class="btn-group">
+                <button class="btn btn-primary">Đăng Ký Xét Tuyển</button>
+                <button class="btn btn-secondary">Tìm Hiểu Thêm</button>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Programs Section -->
+    <section class="section" id="programs">
+        <h2 class="section-title">41 NGÀNH ĐÀO TẠO ĐẠI HỌC CHÍNH QUY</h2>
+
+        <!-- Khối Ngôn ngữ -->
+        <div class="programs-category">
+            <h3 class="category-title"><!--🌍-->🌸 Khối Ngôn ngữ</h3>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <a href="https://ngonngutrung.donga.edu.vn/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">
+                        <h3>Ngôn ngữ Trung Quốc <span class="code" style="float: inline-end;">101</span></h3>
+                        <span class="to-hop">C00, C03, C04, D01, D10, D14, X02, X70, X78</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://ngoaingu.donga.edu.vn/ngon-ngu-anh-kd" target="_blank" rel="noopener noreferrer">
+                        <h3>Ngôn Ngữ Anh <span class="code" style="float: inline-end;">102</span></h3>
+                        <span class="to-hop">C00, C03, C04, D01, D10, D14, X02, X70, X78</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://ngonnguhan.donga.edu.vn/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">
+                        <h3>Ngôn Ngữ Hàn Quốc <span class="code" style="float: inline-end;">103</span></h3>
+                        <span class="to-hop">C00, C03, C04, D01, D10, D14, X02, X70, X78</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://ngonngunhat.donga.edu.vn/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">
+                        <h3>Ngôn Ngữ Nhật <span class="code" style="float: inline-end;">104</span></h3>
+                        <span class="to-hop">C00, C03, C04, D01, D10, D14, X02, X70, X78</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Khối Kinh doanh & Quản lý -->
+        <div class="programs-category">
+            <h3 class="category-title"><!--💼-->🌸 Khối Kinh Doanh & Quản Lý</h3>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/Quan-tri-kinh-doanh" target="_blank" rel="noopener noreferrer">
+                        <h3>Quản Trị Kinh Doanh <span class="code" style="float: inline-end;">105</span></h3>
+                        <span class="to-hop">A00, A01, A07, D01, D10, X01, X02, X17, X21</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://marketing.donga.edu.vn/chi-tiet/Ban-mo-ta-chuong-trinh-dao-tao-nganh-Marketing-DH-Dong-A-nam-2022-32231" target="_blank" rel="noopener noreferrer">
+                        <h3>Marketing <span class="code" style="float: inline-end;">106</span></h3>
+                        <span class="to-hop">A00, A01, A07, D01, D10, X01, X02, X17, X21</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/Logistics" target="_blank" rel="noopener noreferrer">
+                        <h3>Logistics & QL chuỗi cung ứng <span class="code" style="float: inline-end;">107</span></h3>
+                        <span class="to-hop">A00, A01, A07, D01, D10, X01, X02, X17, X21</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/thuong-mai-dien-tu" target="_blank" rel="noopener noreferrer">
+                        <h3>Thương mại điện tử <span class="code" style="float: inline-end;">108</span></h3>
+                        <span class="to-hop">A00, A01, A07, D01, D10, X01, X02, X17, X21</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://ketoan.donga.edu.vn/dao-tao-ke-toan" target="_blank" rel="noopener noreferrer">
+                        <h3>Kế toán <span class="code" style="float: inline-end;">109</span></h3>
+                        <span class="to-hop">A00, A01, A07, D01, D10, X01, X02, X17, X21</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://ketoan.donga.edu.vn/tai-chinh-ngan-hang" target="_blank" rel="noopener noreferrer">
+                        <h3>Tài chính ngân hàng <span class="code" style="float: inline-end;">110</span></h3>
+                        <span class="to-hop">A00, A01, A07, D01, D10, X01, X02, X17, X21</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/kinh-doanh-quoc-te" target="_blank" rel="noopener noreferrer">
+                        <h3>Kinh doanh Quốc tế <span class="code" style="float: inline-end;">111</span></h3>
+                        <span class="to-hop">A07, C04, D01, D09, D10, X01, X02, X17, X21</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/truyen-thong-da-phuong-tien" target="_blank" rel="noopener noreferrer">
+                        <h3>Truyền thông đa phương tiện <span class="code" style="float: inline-end;">112</span></h3>
+                        <span class="to-hop">A00, A01, C00, D01, D14, X01, X02, X17, X21</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://quantri.donga.edu.vn/ctdt/quan-tri-nhan-luc" target="_blank" rel="noopener noreferrer">
+                        <h3>Quản trị nhân lực <span class="code" style="float: inline-end;">113</span></h3>
+                        <span class="to-hop">A07, C00, D01, D09, D14, X25, X01, X02, X78</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://quantri.donga.edu.vn/ctdt/nganh-quan-tri-van-phong" target="_blank" rel="noopener noreferrer">
+                        <h3>Quản trị văn phòng <span class="code" style="float: inline-end;">114</span></h3>
+                        <span class="to-hop">A07, C00, D01, D09, D14, X25, X01, X02, X78</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://mtud.donga.edu.vn/nganh-dao-tao/thiet-ke-thoi-trang" target="_blank" rel="noopener noreferrer">
+                        <h3>Thiết kế thời trang <span class="code" style="float: inline-end;">115</span></h3>
+                        <span class="to-hop">D01, X02, X07, X21, X27, V01, V02, V03, H06</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Khối Du lịch - Nhà hàng - Khách sạn -->
+        <div class="programs-category">
+            <h3 class="category-title"><!--🧳-->🌸 Khối Du lịch - Nhà hàng - Khách sạn</h3>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <a href="https://dulich.donga.edu.vn/Quan-tri-dich-vu-du-lich-lu-hanh" target="_blank" rel="noopener noreferrer">
+                        <h3>Quản trị DV Du lịch & Lữ hành <span class="code" style="float: inline-end;">116</span></h3>
+                        <span class="to-hop">C00, C04, D01, D09, D14, D15, X01, X02, X21</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://dulich.donga.edu.vn/quan-tri-khach-san" target="_blank" rel="noopener noreferrer">
+                        <h3>Quản trị Khách sạn <span class="code" style="float: inline-end;">117</span></h3>
+                        <span class="to-hop">C00, C04, D01, D09, D14, D15, X01, X02, X21</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://dulich.donga.edu.vn/QT-nha-hang-dich-vu-an-uong" target="_blank" rel="noopener noreferrer">
+                        <h3>Quản trị Nhà hàng & DV Ăn uống <span class="code" style="float: inline-end;">118</span></h3>
+                        <span class="to-hop">C00, C04, D01, D09, D14, D15, X01, X02, X21</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Khối Kỹ thuật -->
+        <div class="programs-category">
+            <h3 class="category-title"><!--💻-->🌸 Khối Kỹ thuật</h3>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <a href="https://oto.donga.edu.vn/ctdt" target="_blank" rel="noopener noreferrer">
+                        <h3>CNKT Ô tô <span class="code" style="float: inline-end;">119</span></h3>
+                        <span class="to-hop">A00, A01, A02, A04, C01, X05, X06, X07, X26</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://cntt.donga.edu.vn/ctdt/dao-tao-cntt-2024" target="_blank" rel="noopener noreferrer">
+                        <h3>Công Nghệ Thông Tin <span class="code" style="float: inline-end;">120</span></h3>
+                        <span class="to-hop">A00, A01, D01, X01, X02, X06, X07, X25, X26</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://cntt.donga.edu.vn/nganh-kythuatmaytinh" target="_blank" rel="noopener noreferrer">
+                        <h3>Kỹ thuật máy tính <span class="code" style="float: inline-end;">121</span></h3>
+                        <span class="to-hop">A00, A01, D01, X01, X02, X06, X07, X25, X26</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://ai.donga.edu.vn/dao-tao/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">
+                        <h3>Trí tuệ nhân tạo <span class="code" style="float: inline-end;">122</span></h3>
+                        <span class="to-hop">A00, A01, D01, X01, X02, X06, X07, X25, X26</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://mtud.donga.edu.vn/nganh-dao-tao/do-hoa" target="_blank" rel="noopener noreferrer">
+                        <h3>Đồ hoạ <span class="code" style="float: inline-end;">123</span></h3>
+                        <span class="to-hop">A01, D01, X02, X06, X07, V00, V01, V02, V06</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://dien.donga.edu.vn/dao-tao-tu-dong-hoa" target="_blank" rel="noopener noreferrer">
+                        <h3>CNKT Điều khiển & Tự động hoá <span class="code" style="float: inline-end;">124</span></h3>
+                        <span class="to-hop">A00, A01, A02, A04, C01, X05, X06, X07, X26</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://dien.donga.edu.vn/dao-tao-dien-tu" target="_blank" rel="noopener noreferrer">
+                        <h3>CNKT Điện - Điện tử <span class="code" style="float: inline-end;">125</span></h3>
+                        <span class="to-hop">A00, A01, A02, A04, C01, X05, X06, X07, X26</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://xaydung.donga.edu.vn/dao-tao-cnkt-xay-dung" target="_blank" rel="noopener noreferrer">
+                        <h3>CNKT Xây dựng <span class="code" style="float: inline-end;">126</span></h3>
+                        <span class="to-hop">A00, A01, A02, A04, C01, X05, X06, X07, X26</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://oto.donga.edu.vn/ctdt/chuong-trinh-dao-tao-nganh-ky-thuat-co-dien-tu" target="_blank" rel="noopener noreferrer">
+                        <h3>Kỹ thuật Cơ điện tử <span class="code" style="float: inline-end;">127</span></h3>
+                        <span class="to-hop">A00, A01, A02, A04, C01, X05, X06, X07, X26</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://donga.edu.vn/tuyensinh/tu-van/chon-nganh-hoc" target="_blank" rel="noopener noreferrer">
+                        <h3>Kiến trúc <span class="code" style="float: inline-end;">128</span></h3>
+                        <span class="to-hop">A01, D01, X02, X06, X07, V00, V01, V02, V04</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://cnthucpham.donga.edu.vn/chuong-trinh-dao-tao-cong-nghe-thuc-pham" target="_blank" rel="noopener noreferrer">
+                        <h3>Công nghệ thực phẩm <span class="code" style="float: inline-end;">129</span></h3>
+                        <span class="to-hop">A00, A02, B00, B02, B03, B08, X09, X13, X14</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://donga.edu.vn/tuyensinh/ts-chi-tiet/hoc-nganh-nong-nghiep-ra-lam-gi-co-hoi-viec-lam-cua-nganh-nong-nghiep-32546" target="_blank" rel="noopener noreferrer">
+                        <h3>Nông nghiệp <span class="code" style="float: inline-end;">130</span></h3>
+                        <span class="to-hop">A00, A02, B00, B02, B03, B08, X09, X13, X14</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://donga.edu.vn/tuyensinh/tu-van/chon-nganh-hoc" target="_blank" rel="noopener noreferrer">
+                        <h3>Thú Y <span class="code" style="float: inline-end;">131</span></h3>
+                        <span class="to-hop">A00, A02, B00, B02, B03, B08, X09, X13, X14</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Khối Luật -->
+        <div class="programs-category">
+            <h3 class="category-title"><!--⚖-->🌸 Khối Luật</h3>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <a href="https://luat.donga.edu.vn/luat" target="_blank" rel="noopener noreferrer">
+                        <h3>Luật <span class="code" style="float: inline-end;">138</span></h3>
+                        <span class="to-hop">A01, C00, C03, C04, D01, D14, X01, X02</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://luat.donga.edu.vn/Chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">
+                        <h3>Luật Kinh tế <span class="code" style="float: inline-end;">139</span></h3>
+                        <span class="to-hop">A01, C00, C03, C04, D01, D14, X01, X02</span>
+                    </a>
+                </div>
+                <div></div>
+            </div>
+        </div>
+
+        <!-- Khối sức khoẻ -->
+        <div class="programs-category">
+            <h3 class="category-title"><!--⚕️-->🌸 Khối Sức Khỏe</h3>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <a href="https://y.donga.edu.vn/dao-tao/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">
+                        <h3>Y Khoa <span class="code" style="float: inline-end;">132</span></h3>
+                        <span class="to-hop">A00, A02, B00, B08, D07, X09, X11, X13, X14</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://duoc.donga.edu.vn/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">
+                        <h3>Dược <span class="code" style="float: inline-end;">133</span></h3>
+                        <span class="to-hop">A00, A02, B00, B08, D07, X09, X11, X13, X14</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://dieuduong.donga.edu.vn/chuong-trinh-dao-tao-dieu-duong" target="_blank" rel="noopener noreferrer">
+                        <h3>Điều Dưỡng <span class="code" style="float: inline-end;">134</span></h3>
+                        <span class="to-hop">A00, A02, B00, B08, B03, D07, X11, X13, X14</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://dieuduong.donga.edu.vn/nganh-dao-tao/nganh-ky-thuat-phuc-hoi-chuc-nang" target="_blank" rel="noopener noreferrer">
+                        <h3>Kỹ thuật Phục hồi Chức năng <span class="code" style="float: inline-end;">135</span></h3>
+                        <span class="to-hop">A00, A02, B00, B08, B03, D07, X11, X13, X14</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://donga.edu.vn/tuyensinh/ts-chi-tiet/nganh-ho-sinh-%E2%80%93-co-the-ban-chua-biet-27756" target="_blank" rel="noopener noreferrer">
+                        <h3>Hộ sinh<span class="code" style="float: inline-end;">136</span></h3>
+                        <span class="to-hop">A00, A02, B00, B08, B03, D07, X11, X13, X14</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://dinhduong.donga.edu.vn/chuong-trinh-dao-tao-nganh-dinh-duong" target="_blank" rel="noopener noreferrer">
+                        <h3>Dinh dưỡng<span class="code" style="float: inline-end;">137</span></h3>
+                        <span class="to-hop">A00, A02, B00, B08, B03, D07, X11, X13, X14</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Khối Tâm lý & Sư phạm -->
+        <div class="programs-category">
+            <h3 class="category-title"><!--📖-->🌸 Khối Tâm lý & Sư phạm</h3>
+            <div class="programs-grid">
+                 <div class="program-card">
+                    <a href="https://supham.donga.edu.vn/chuong-trinh-dao-tao-nganh-van-hoc-ung-dung" target="_blank" rel="noopener noreferrer">
+                        <h3>Giáo dục học (Đang mở)<span class="code" style="float: inline-end;">140</span></h3>
+                        <span class="to-hop">C00, C03, C04, D01, D14, D15, X02, X70, X78</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://supham.donga.edu.vn/chuong-trinh-dao-tao-tam-ly-hoc" target="_blank" rel="noopener noreferrer">
+                        <h3>Tâm lý học<span class="code" style="float: inline-end;">141</span></h3>
+                        <span class="to-hop">C00, C03, C04, B03, D01, D12, X02, X17, X70</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://supham.donga.edu.vn/chuong-trinh-dao-tao-nganh-quan-ly-van-hoa" target="_blank" rel="noopener noreferrer">
+                        <h3>Quản lý văn hoá<span class="code" style="float: inline-end;">142</span></h3>
+                        <span class="to-hop">C00, C03, C04, B03, D01, X02, X17, X70, M06</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://supham.donga.edu.vn/chuong-trinh-dao-tao-nganh-van-hoc-ung-dung" target="_blank" rel="noopener noreferrer">
+                        <h3>Văn học (Ứng dụng)<span class="code" style="float: inline-end;">143</span></h3>
+                        <span class="to-hop">C00, C03, C04, D01, D14, D15, X02, X70, X78</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://supham.donga.edu.vn/chuong-trinh-dao-tao-nganh-van-hoc-ung-dung" target="_blank" rel="noopener noreferrer">
+                        <h3>Văn học (Ứng dụng)<span class="code" style="float: inline-end;">143</span></h3>
+                        <span class="to-hop">C00, C03, C04, D01, D14, D15, X02, X70, X78</span>
+                    </a>
+                </div>
+                <div class="program-card">
+                    <a href="https://supham.donga.edu.vn/chuong-trinh-dao-tao-nganh-van-hoc-ung-dung" target="_blank" rel="noopener noreferrer">
+                        <h3>Văn học (Ứng dụng)<span class="code" style="float: inline-end;">143</span></h3>
+                        <span class="to-hop">C00, C03, C04, D01, D14, D15, X02, X70, X78</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thông tin chi tiết về tổ hợp môn -->
+    <section class="ToHopMon" id="tohopmon">
+        <div class="ToHopMon-title">
+            <h4>THÔNG TIN CHI TIẾT VỀ TỔ HỢP MÔN</h4>
+            <ul class="list-item">
+                <li class="item"><strong>A00</strong>: Toán, Lý, Hóa || <strong>A01</strong>: Toán, Lý, Anh || <strong>A02</strong>: Toán, Lý, Sinh || <strong>A04</strong>: Toán, Lý, Địa ||&nbsp;<strong>A07:&nbsp;</strong>Toán, Sử, Địa</li>
+                <li class="item"><strong>B00</strong>: Toán, Hóa, Sinh || <strong>B02</strong>: Toán, Sinh, Địa || <strong>B03</strong>: Toán, Sinh, Văn || <strong>B08</strong>: Toán, Sinh, Anh</li>
+                <li class="item"><strong>C00</strong>: Văn, Sử, Địa || <strong>C01</strong>: Văn, Toán, Lý || <strong>C03</strong>: Văn, Toán, Sử || <strong>C04</strong>: Toán, Văn, Địa</li>
+                <li class="item"><strong>D01</strong>: Toán, Văn, Anh || <strong>D07</strong>: Toán, Hóa, Anh || <strong>D09</strong>: Toán, Sử, Anh || <strong>D10</strong>: Toán, Địa, Anh || <strong>D14</strong>: Văn, Sử, Anh || <strong>D15</strong>: Văn, Địa, Anh</li>
+                <li class="item"><strong>V00</strong>: Toán, Lý, Vẽ NK || <strong>V01</strong>: Toán, Văn, Vẽ NK || <strong>V02</strong>: Toán, Anh, Vẽ NK || <strong>V03</strong>: Toán, Hoá, Vẽ NK || <strong>V04</strong>: Toán, GDKTPL, Vẽ NK</li>
+                <li class="item"><strong>X01</strong>: Toán, Văn, GDKTPL || <strong>X02</strong>: Toán, Văn, Tin ||<strong> X05</strong>: Toán, Lý, GDKTPL || <strong>X06</strong>: Toán, Lý, Tin || <strong>X07</strong>: Toán, Lý, Công Nghệ || <strong>X09</strong>: Toán, Hoá, GDKTPL || <strong>X11</strong>: Toán, Hoá, Công nghệ || <strong>X13</strong>: Toán, Sinh, GDKTPL || <strong>X14</strong>: Toán, Sinh, Tin || <strong>X17</strong>: Toán, Sử, GDKTPL || <strong>X21</strong>: Toán, Địa, GDKTPL || <strong>X25</strong>: Toán, Anh, GDKTPL || <strong>X26</strong>: Toán, Tin, Anh || <strong>X27</strong>: Toán, Anh, Công nghệ || <strong>X53</strong>: Toán, Tin, GDKTPL || <strong>X70</strong>: Văn, Sử, GDKTPL || <strong>X78</strong>: Văn, Anh, GDKTPL</li>
+                <li class="item"><strong>H06</strong>: Văn, Anh, Vẽ</li>
+                <li class="item"><strong>M06</strong>: Văn, Toán, Năng khiếu nghệ thuật</li>
+            </ul>      
+        </div>
+    </section>    
+</section>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Button click handlers
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Cảm ơn bạn quan tâm! Vui lòng điền thông tin đăng ký.');
+            });
+        });
+    </script>
+</body>
+</html>
