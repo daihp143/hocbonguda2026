@@ -53,7 +53,8 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(11, 91, 47, 0.92);
+      /* background: rgba(11, 91, 47, 0.92); */
+      background: #FFFFFF;
       backdrop-filter: blur(6px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.14);
     }
@@ -64,6 +65,11 @@
       justify-content: space-between;
       gap: 16px;
       padding: 12px 0;
+    }
+
+    .logo-brand {
+      width: 350px;
+      height: 35px;
     }
 
     .brand {
@@ -491,6 +497,7 @@
       color: #1f2f25;
       background: #fcfffc;
       transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+      transform: translateY(-15px);
     }
 
     select {
@@ -577,7 +584,7 @@
       content: "";
       position: absolute;
       left: 0;
-      top: .62em;
+      top: 0.8em;
       width: 7px;
       height: 7px;
       border-radius: 50%;
@@ -585,7 +592,24 @@
     }
 
     .major-card li + li {
-      margin-top: 8px;
+      margin-top: 5px;
+    }
+
+    /* link styles inside cards */
+    .major-card a {
+      color: #000000;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color .2s, text-decoration .2s;
+    }
+    .major-card a:hover {
+      color: #E96440;
+      text-decoration: underline;
+    }
+    .major-card li a {
+      display: inline-block;
+      width: 100%;
+      padding: 4px 0;
     }
 
     .major-stack {
@@ -645,7 +669,7 @@
     }
 
     .footer-logo {
-      width: 110px;
+      width: 280px;
       height: 110px;
       border-radius: 14px;
       overflow: hidden;
@@ -660,7 +684,8 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      background: #fff;
+      /* background: #fff; */
+      padding: 10px;
     }
 
     .footer-logo-fallback {
@@ -760,7 +785,8 @@
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
-      <div class="brand">Đại học Đông Á - Tuyển sinh 2026</div>
+      <img class="logo-brand" src="img/logo-lp-hoc-bong.png" alt="logo-brand">
+      <!-- <div class="brand">Đại học Đông Á - Tuyển sinh 2026</div> -->
       <div class="top-actions">
         <a class="btn btn-secondary" href="#hoc-bong">Xem học bổng</a>
         <a class="btn btn-primary" href="#dang-ky">Đăng ký xét tuyển</a>
@@ -835,7 +861,7 @@
             <li>Ưu tiên thí sinh có giải học sinh giỏi, thành tích dự án hoặc hoạt động xã hội.</li>
             <li>Áp dụng cho tất cả các ngành xét tuyển năm 2026.</li>
           </ul> -->
-          <img src="chon-nganh-hoc/img/hoc-bong-tai-nang.jpg" alt="Học bổng tài năng" style="width: 100%; border-radius: 12px;">
+          <img src="img/hoc-bong-tai-nang.jpg" alt="Học bổng tài năng" style="width: 100%; border-radius: 12px;">
         </div>
         <div class="scholarship-panel" id="panel-khuyenhoc">
           <!-- <h3>Học bổng khuyến học</h3>
@@ -845,7 +871,7 @@
             <li>Chính sách kết hợp ưu đãi học phí và hỗ trợ học tập.</li>
             <li>Tiếp tục duy trì theo kết quả học tập từng học kỳ.</li>
           </ul> -->
-          <img src="chon-nganh-hoc/img/hoc-bong-khuyen-hoc-26t8.jpg" alt="Học bổng khuyến học" style="width: 100%; border-radius: 12px;">
+          <img src="img/hoc-bong-khuyen-hoc-26t8.jpg" alt="Học bổng khuyến học" style="width: 100%; border-radius: 12px;">
         </div>
         <div class="scholarship-panel" id="panel-vietnhat">
           <!-- <h3>Học bổng cầu nối Việt - Nhật</h3>
@@ -855,7 +881,7 @@
             <li>Ưu tiên nhóm ngành có chương trình hợp tác doanh nghiệp Nhật.</li>
             <li>Được tư vấn lộ trình ngoại ngữ và việc làm sau tốt nghiệp.</li>
           </ul> -->
-          <img src="chon-nganh-hoc/img/hoc-bong-cau-noi-viet-nhat.jpg" alt="Học bổng cầu nối Việt Nhật" style="width: 100%; border-radius: 12px;">
+          <img src="img/hoc-bong-cau-noi-viet-nhat.jpg" alt="Học bổng cầu nối Việt Nhật" style="width: 100%; border-radius: 12px;">
         </div>
       </div>
     </div>
@@ -874,7 +900,7 @@
            <!-- <p style="margin-top: 12px;">Đại học Đông Á dành hàng ngàn suất học bổng cho tân sinh viên năm 2026. Dễ dàng đăng ký xét tuyển với hơn 40+ ngành học, nhiều chương trình liên kết quốc tế chất lượng, đảm bảo cơ hội việc làm ngay sau khi ra trường.</p>
         </div> -->
           <div class="apply-media">
-            <img src="chon-nganh-hoc/img/banner-2-lp-hoc-bong-2026.jpg" alt="img tư vấn học bổng">
+            <img src="img/banner-2-lp-hoc-bong-2026.jpg" alt="img tư vấn học bổng">
           </div>
 
         <form class="apply-form" id="apply-form" action="#" method="post" data-script-url="">
@@ -954,10 +980,10 @@
         <article class="card major-card">
           <h3>Ngôn ngữ</h3>
           <ul>
-            <li>Ngôn ngữ Trung Quốc</li>
-            <li>Ngôn ngữ Anh</li>
-            <li>Ngôn ngữ Hàn Quốc</li>
-            <li>Ngôn ngữ Nhật</li>
+            <li><a href="https://ngonngutrung.donga.edu.vn/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">Ngôn ngữ Trung Quốc</a></li>
+            <li><a href="https://ngoaingu.donga.edu.vn/ngon-ngu-anh-kd" target="_blank" rel="noopener noreferrer">Ngôn ngữ Anh</a></li>
+            <li><a href="https://ngonnguhan.donga.edu.vn/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">Ngôn ngữ Hàn Quốc</a></li>
+            <li><a href="https://ngonngunhat.donga.edu.vn/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">Ngôn ngữ Nhật</a></li>
           </ul>
         </article>
 
@@ -965,17 +991,17 @@
         <article class="card major-card">
           <h3>Kinh doanh & Quản lý</h3>
           <ul>
-            <li>Quản trị Kinh doanh</li>
-            <li>Marketing</li>
-            <li>Logistics và Quản lý chuỗi cung ứng</li>
-            <li>Thương mại điện tử</li>
-            <li>Kế toán</li>
-            <li>Tài chính ngân hàng</li>
-            <li>Kinh doanh quốc tế</li>
-            <li>Truyền thông đa phương tiện</li>
-            <li>Quản trị nhân lực</li>
-            <li>Quản trị văn phòng</li>
-            <li>Thiết kế thời trang</li>
+            <li><a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/Quan-tri-kinh-doanh" target="_blank" rel="noopener noreferrer">Quản trị Kinh doanh</a></li>
+            <li><a href="https://marketing.donga.edu.vn/Nganh-dao-tao/Marketing" target="_blank" rel="noopener noreferrer">Marketing</a></li>
+            <li><a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/Logistics" target="_blank" rel="noopener noreferrer">Logistics và Quản lý chuỗi cung ứng</a></li>
+            <li><a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/thuong-mai-dien-tu" target="_blank" rel="noopener noreferrer">Thương mại điện tử</a></li>
+            <li><a href="https://ketoan.donga.edu.vn/dao-tao-ke-toan" target="_blank" rel="noopener noreferrer">Kế toán</a></li>
+            <li><a href="https://ketoan.donga.edu.vn/tai-chinh-ngan-hang" target="_blank" rel="noopener noreferrer">Tài chính ngân hàng</a></li>
+            <li><a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/kinh-doanh-quoc-te" target="_blank" rel="noopener noreferrer">Kinh doanh quốc tế</a></li>
+            <li><a href="https://marketing.donga.edu.vn/Nganh-dao-tao/Truyen-thong-da-phuong-tien" target="_blank" rel="noopener noreferrer">Truyền thông đa phương tiện</a></li>
+            <li><a href="https://quantri.donga.edu.vn/ctdt/quan-tri-nhan-luc" target="_blank" rel="noopener noreferrer">Quản trị nhân lực</a></li>
+            <li><a href="https://quantri.donga.edu.vn/ctdt/nganh-quan-tri-van-phong" target="_blank" rel="noopener noreferrer">Quản trị văn phòng</a></li>
+            <li><a href="https://mtud.donga.edu.vn/nganh-dao-tao/thiet-ke-thoi-trang" target="_blank" rel="noopener noreferrer">Thiết kế thời trang</a></li>
           </ul>
         </article>
 
@@ -983,9 +1009,9 @@
         <article class="card major-card">
           <h3>Du lịch - Nhà hàng - Khách sạn</h3>
           <ul>
-            <li>Quản trị dịch vụ du lịch và lữ hành</li>
-            <li>Quản trị khách sạn</li>
-            <li>Quản trị nhà hàng và dịch vụ ăn uống</li>
+            <li><a href="https://dulich.donga.edu.vn/Quan-tri-dich-vu-du-lich-lu-hanh" target="_blank" rel="noopener noreferrer">Quản trị dịch vụ du lịch và lữ hành</a></li>
+            <li><a href="https://dulich.donga.edu.vn/quan-tri-khach-san" target="_blank" rel="noopener noreferrer">Quản trị khách sạn</a></li>
+            <li><a href="https://dulich.donga.edu.vn/QT-nha-hang-dich-vu-an-uong" target="_blank" rel="noopener noreferrer">Quản trị nhà hàng và dịch vụ ăn uống</a></li>
           </ul>
         </article>
 
@@ -993,19 +1019,19 @@
         <article class="card major-card">
           <h3>Kỹ thuật</h3>
           <ul>
-            <li>Công nghệ kỹ thuật ô tô</li>
-            <li>Công nghệ thông tin</li>
-            <li>Kỹ thuật máy tính</li>
-            <li>Trí tuệ nhân tạo</li>
-            <li>Đồ hoạ</li>
-            <li>Công nghệ kỹ thuật điều khiển & tự động hoá</li>
-            <li>Công nghệ kỹ thuật Điện - Điện tử</li>
-            <li>Công nghệ kỹ thuật Xây dựng</li>
-            <li>Kỹ thuật Cơ điện tử</li>
+            <li><a href="https://oto.donga.edu.vn/o-to" target="_blank" rel="noopener noreferrer">Công nghệ kỹ thuật ô tô</a></li>
+            <li><a href="https://cntt.donga.edu.vn/ctdt/cntt-2025" target="_blank" rel="noopener noreferrer">Công nghệ thông tin</a></li>
+            <li><a href="https://cntt.donga.edu.vn/ctdt/nganh-kythuatmaytinh" target="_blank" rel="noopener noreferrer">Kỹ thuật máy tính</a></li>
+            <li><a href="https://ai.donga.edu.vn/dao-tao/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">Trí tuệ nhân tạo</a></li>
+            <li><a href="https://mtud.donga.edu.vn/nganh-dao-tao/do-hoa" target="_blank" rel="noopener noreferrer">Đồ hoạ</a></li>
+            <li><a href="https://dien.donga.edu.vn/dao-tao-tu-dong-hoa" target="_blank" rel="noopener noreferrer">Công nghệ kỹ thuật điều khiển & tự động hoá</a></li>
+            <li><a href="https://dien.donga.edu.vn/dao-tao-dien-tu" target="_blank" rel="noopener noreferrer">Công nghệ kỹ thuật Điện - Điện tử</a></li>
+            <li><a href="https://xaydung.donga.edu.vn/dao-tao-cnkt-xay-dung" target="_blank" rel="noopener noreferrer">Công nghệ kỹ thuật Xây dựng</a></li>
+            <li><a href="https://oto.donga.edu.vn/ctdt/chuong-trinh-dao-tao-nganh-ky-thuat-co-dien-tu" target="_blank" rel="noopener noreferrer">Kỹ thuật Cơ điện tử</a></li>
             <li>Kiến trúc</li>
-            <li>Công nghệ thực phẩm</li>
-            <li>Nông nghiệp</li>
-            <li>Thú Y</li>
+            <li><a href="https://cnthucpham.donga.edu.vn/chuong-trinh-dao-tao-cong-nghe-thuc-pham" target="_blank" rel="noopener noreferrer">Công nghệ thực phẩm</a></li>
+            <li><a href="https://cnthucpham.donga.edu.vn/chuong-trinh-dao-tao-nong-nghiep-cnc" target="_blank" rel="noopener noreferrer">Nông nghiệp</a></li>
+            <li><a href="https://cnthucpham.donga.edu.vn/chuong-trinh-dao-tao-nganh-thu-y" target="_blank" rel="noopener noreferrer">Thú Y</a></li>
           </ul>
         </article>
 
@@ -1014,8 +1040,8 @@
           <article class="card major-card compact">
             <h3>Luật</h3>
             <ul>
-              <li>Luật</li>
-              <li>Luật kinh tế</li>
+              <li><a href="https://luat.donga.edu.vn/luat" target="_blank" rel="noopener noreferrer">Luật</a></li>
+              <li><a href="https://luat.donga.edu.vn/Chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">Luật kinh tế</a></li>
             </ul>
           </article>
 
@@ -1023,12 +1049,12 @@
           <article class="card major-card compact">
             <h3>Sức khoẻ</h3>
             <ul>
-              <li>Y Khoa</li>
-              <li>Dược</li>
-              <li>Điều dưỡng</li>
-              <li>Kỹ thuật Phục hồi Chức năng</li>
-              <li>Hộ sinh</li>
-              <li>Dinh dưỡng</li>
+              <li><a href="https://y.donga.edu.vn/dao-tao/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">Y Khoa</a></li>
+              <li><a href="https://duoc.donga.edu.vn/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">Dược</a></li>
+              <li><a href="https://dieuduong.donga.edu.vn/chuong-trinh-dao-tao-dieu-duong" target="_blank" rel="noopener noreferrer">Điều dưỡng</a></li>
+              <li><a href="https://dieuduong.donga.edu.vn/nganh-dao-tao/nganh-ky-thuat-phuc-hoi-chuc-nang" target="_blank" rel="noopener noreferrer">Kỹ thuật Phục hồi Chức năng</a></li>
+              <li><a href="https://dieuduong.donga.edu.vn/" target="_blank" rel="noopener noreferrer">Hộ sinh</a></li>
+              <li><a href="https://dinhduong.donga.edu.vn/chuong-trinh-dao-tao-nganh-dinh-duong" target="_blank" rel="noopener noreferrer">Dinh dưỡng</a></li>
             </ul>
           </article>
         </div>
@@ -1037,10 +1063,10 @@
         <article class="card major-card">
           <h3>Tâm lý & Sư phạm</h3>
           <ul>
-            <li>Giáo dục học (Đang mở)</li>
-            <li>Tâm lý học</li>
-            <li>Quản lý văn hoá</li>
-            <li>Văn học (Ứng dụng)</li>
+            <li><a href="#" title="Đang mở">Giáo dục học (Đang mở)</a></li>
+            <li><a href="https://supham.donga.edu.vn/chuong-trinh-dao-tao-tam-ly-hoc" target="_blank" rel="noopener noreferrer">Tâm lý học</a></li>
+            <li><a href="https://supham.donga.edu.vn/thong-tin-chi-tiet/nganh-quan-ly-van-hoa---co-hoi-cho-su-nghiep-thang-hoa-28662" target="_blank" rel="noopener noreferrer">Quản lý văn hoá</a></li>
+            <li><a href="https://supham.donga.edu.vn/chuong-trinh-dao-tao-nganh-van-hoc-ung-dung" target="_blank" rel="noopener noreferrer">Văn học (Ứng dụng)</a></li>
           </ul>
         </article>
       </div>
@@ -1052,8 +1078,8 @@
       <div class="footer-grid">
         <div class="footer-col">
           <div class="footer-logo">
-            <img src="img/logo-uda.png" alt="Logo Đại học Đông Á" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-            <span class="footer-logo-fallback" style="display:none;">UDA</span>
+            <img src="img/logo-white-uda.png" alt="Logo Đại học Đông Á" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+            <!-- <span class="footer-logo-fallback" style="display:none;">UDA</span> -->
           </div>
           <p>© 2026 UDA - Trang thông tin xét học bổng</p>
           <!-- <p>Trang thông tin xét học bổng</p> -->
