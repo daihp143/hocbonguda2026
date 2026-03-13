@@ -497,7 +497,7 @@
       color: #1f2f25;
       background: #fcfffc;
       transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
-      transform: translateY(-15px);
+      transform: translateY(-10px);
     }
 
     select {
@@ -903,9 +903,12 @@
             <img src="chon-nganh-hoc/img/banner-2-lp-hoc-bong-2026.jpg" alt="img tư vấn học bổng">
           </div>
 
-        <form class="apply-form" id="apply-form" action="#" method="post" data-script-url="">
+        <form class="apply-form" id="apply-form" action="#" method="post" data-script-url="https://script.google.com/macros/s/AKfycbyWajG6uf4FMSkVVuwJ2qaPwTXlQCc4jXtR4tXgAYIQSOb-fVA9zE27xumwP9wTreRQJQ/exec">
           <label for="fullname">HỌ VÀ TÊN</label>
           <input id="fullname" name="fullname" type="text" placeholder="Nguyễn Văn A" required>
+
+          <label for="CCCD">CCCD</label>
+          <input id="CCCD" name="CCCD" type="tel" placeholder="xxx xxx xxx xxx" required>
 
           <label for="phone">SỐ ĐIỆN THOẠI</label>
           <input id="phone" name="phone" type="tel" placeholder="09xx xxx xxx" required>
@@ -961,8 +964,7 @@
             <option>Văn học (Ứng dụng)</option>
           </select>
 
-          <label for="message">GHI CHÚ THÊM</label>
-          <textarea id="message" name="message" placeholder="Điền thông tin bạn muốn tư vấn..."></textarea>
+          <input type="hidden" name="message" value="donga.edu.vn/hocbong2026">
 
           <button class="btn btn-primary" type="submit">ĐĂNG KÝ NHẬN TƯ VẤN</button>
           <p id="form-status" style="margin: 0; font-size: 13px; color: #2d4435;"></p>
@@ -1140,6 +1142,13 @@
   </footer>
 
   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sourceInput = document.querySelector('input[name="message"]');
+      if (sourceInput) {
+        sourceInput.value = window.location.hostname;
+      }
+    });
+
     const pills = document.querySelectorAll(".pill");
     const panels = document.querySelectorAll(".scholarship-panel");
 
@@ -1179,11 +1188,11 @@
             mode: "no-cors"
           });
 
-          formStatus.textContent = "Submitted successfully. We will contact you soon.";
+          formStatus.textContent = "Đăng ký thành công. Đội ngũ tư vấn sẽ liên lạc với bạn ngay.";
           formStatus.style.color = "#128341";
           applyForm.reset();
         } catch (error) {
-          formStatus.textContent = "Submit failed. Please try again.";
+          formStatus.textContent = "Nhập sai. Vui lòng thử lại.";
           formStatus.style.color = "#d0332d";
         } finally {
           submitBtn.disabled = false;
