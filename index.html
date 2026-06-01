@@ -16,6 +16,7 @@
       --cream: #fffdf6;
       --gold: #f8d154;
       --red: #d0332d;
+      --orange: #ffb876;
       --ink: #1d2a22;
       --muted: #e9f2ea;
       --card: #ffffff;
@@ -105,7 +106,7 @@
 
     .btn-primary {
       color: #fff;
-      background: linear-gradient(90deg, var(--red), #ed4f47);
+      background: linear-gradient(90deg, var(--red), var(--orange));
       box-shadow: 0 10px 24px rgba(208, 51, 45, 0.28);
     }
 
@@ -526,7 +527,7 @@
 
     .majors {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 15px;
       align-items: stretch;
       margin: 30px 0 0 0;
@@ -535,7 +536,7 @@
     .major-card {
       position: relative;
       overflow: hidden;
-      height: 100%;
+      height: auto;
       min-height: 260px;
       padding: 22px 22px 20px;
       border: 1px solid #dce9dd;
@@ -616,7 +617,30 @@
     .major-stack {
       display: grid;
       gap: 20px;
-      align-items: start;
+      align-items: stretch;
+      align-content: stretch;
+      height: 100%;
+    }
+
+    .major-stack > .major-card {
+      height: 100%;
+    }
+
+    .major-stack:nth-child(2) {
+      grid-template-rows:
+        minmax(max-content, 1.25fr)
+        minmax(max-content, 0.85fr);
+    }
+
+    .major-stack:nth-child(3) {
+      grid-template-rows:
+        minmax(max-content, 0.85fr)
+        minmax(max-content, 0.75fr)
+        minmax(max-content, 0.9fr);
+    }
+
+    .major-stack:nth-child(3) .major-card {
+      min-height: auto;
     }
 
     .major-card.compact {
@@ -753,6 +777,12 @@
 
       .major-stack {
         gap: 16px;
+        grid-template-rows: none;
+        height: auto;
+      }
+
+      .major-stack > .major-card {
+        height: auto;
       }
 
       .stats {
@@ -961,7 +991,7 @@
             <option>Kỹ thuật Phục hồi Chức năng</option>
             <option>Hộ sinh</option>
             <option>Dinh dưỡng</option>
-            <option>Giáo dục học (Đang mở)</option>
+            <option>Giáo dục học</option>
             <option>Tâm lý học</option>
             <option>Quản lý văn hoá</option>
             <option>Văn học (Ứng dụng)</option>
@@ -980,74 +1010,51 @@
     <div class="container">
       <h2 class="section-title">Nhóm ngành đào tạo</h2>
       <div class="majors">
-        
-        <!-- Khối ngôn ngữ -->
-        <article class="card major-card">
-          <h3>Ngôn ngữ</h3>
-          <ul>
-            <li><a href="https://ngonngutrung.donga.edu.vn/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">Ngôn ngữ Trung Quốc</a></li>
-            <li><a href="https://ngoaingu.donga.edu.vn/ngon-ngu-anh-kd" target="_blank" rel="noopener noreferrer">Ngôn ngữ Anh</a></li>
-            <li><a href="https://ngonnguhan.donga.edu.vn/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">Ngôn ngữ Hàn Quốc</a></li>
-            <li><a href="https://ngonngunhat.donga.edu.vn/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">Ngôn ngữ Nhật</a></li>
-          </ul>
-        </article>
-
-        <!-- Khối Kinh doanh & Quản lý -->
-        <article class="card major-card">
-          <h3>Kinh doanh & Quản lý</h3>
-          <ul>
-            <li><a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/Quan-tri-kinh-doanh" target="_blank" rel="noopener noreferrer">Quản trị Kinh doanh</a></li>
-            <li><a href="https://marketing.donga.edu.vn/Nganh-dao-tao/Marketing" target="_blank" rel="noopener noreferrer">Marketing</a></li>
-            <li><a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/Logistics" target="_blank" rel="noopener noreferrer">Logistics và Quản lý chuỗi cung ứng</a></li>
-            <li><a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/thuong-mai-dien-tu" target="_blank" rel="noopener noreferrer">Thương mại điện tử</a></li>
-            <li><a href="https://ketoan.donga.edu.vn/dao-tao-ke-toan" target="_blank" rel="noopener noreferrer">Kế toán</a></li>
-            <li><a href="https://ketoan.donga.edu.vn/tai-chinh-ngan-hang" target="_blank" rel="noopener noreferrer">Tài chính ngân hàng</a></li>
-            <li><a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/kinh-doanh-quoc-te" target="_blank" rel="noopener noreferrer">Kinh doanh quốc tế</a></li>
-            <li><a href="https://marketing.donga.edu.vn/Nganh-dao-tao/Truyen-thong-da-phuong-tien" target="_blank" rel="noopener noreferrer">Truyền thông đa phương tiện</a></li>
-            <li><a href="https://quantri.donga.edu.vn/ctdt/quan-tri-nhan-luc" target="_blank" rel="noopener noreferrer">Quản trị nhân lực</a></li>
-            <li><a href="https://quantri.donga.edu.vn/ctdt/nganh-quan-tri-van-phong" target="_blank" rel="noopener noreferrer">Quản trị văn phòng</a></li>
-            <li><a href="https://mtud.donga.edu.vn/nganh-dao-tao/thiet-ke-thoi-trang" target="_blank" rel="noopener noreferrer">Thiết kế thời trang</a></li>
-          </ul>
-        </article>
-
-        <!-- Khối Du lịch - Nhà hàng - Khách sạn -->
-        <article class="card major-card">
-          <h3>Du lịch - Nhà hàng - Khách sạn</h3>
-          <ul>
-            <li><a href="https://dulich.donga.edu.vn/Quan-tri-dich-vu-du-lich-lu-hanh" target="_blank" rel="noopener noreferrer">Quản trị dịch vụ du lịch và lữ hành</a></li>
-            <li><a href="https://dulich.donga.edu.vn/quan-tri-khach-san" target="_blank" rel="noopener noreferrer">Quản trị khách sạn</a></li>
-            <li><a href="https://dulich.donga.edu.vn/QT-nha-hang-dich-vu-an-uong" target="_blank" rel="noopener noreferrer">Quản trị nhà hàng và dịch vụ ăn uống</a></li>
-          </ul>
-        </article>
-
-        <!-- Khối Kỹ thuật -->
-        <article class="card major-card">
-          <h3>Kỹ thuật</h3>
-          <ul>
-            <li><a href="https://oto.donga.edu.vn/o-to" target="_blank" rel="noopener noreferrer">Công nghệ kỹ thuật ô tô</a></li>
-            <li><a href="https://cntt.donga.edu.vn/ctdt/cntt-2025" target="_blank" rel="noopener noreferrer">Công nghệ thông tin</a></li>
-            <li><a href="https://cntt.donga.edu.vn/ctdt/nganh-kythuatmaytinh" target="_blank" rel="noopener noreferrer">Kỹ thuật máy tính</a></li>
-            <li><a href="https://ai.donga.edu.vn/dao-tao/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">Trí tuệ nhân tạo</a></li>
-            <li><a href="https://mtud.donga.edu.vn/nganh-dao-tao/do-hoa" target="_blank" rel="noopener noreferrer">Đồ hoạ</a></li>
-            <li><a href="https://dien.donga.edu.vn/dao-tao-tu-dong-hoa" target="_blank" rel="noopener noreferrer">Công nghệ kỹ thuật điều khiển & tự động hoá</a></li>
-            <li><a href="https://dien.donga.edu.vn/dao-tao-dien-tu" target="_blank" rel="noopener noreferrer">Công nghệ kỹ thuật Điện - Điện tử</a></li>
-            <li><a href="https://xaydung.donga.edu.vn/dao-tao-cnkt-xay-dung" target="_blank" rel="noopener noreferrer">Công nghệ kỹ thuật Xây dựng</a></li>
-            <li><a href="https://oto.donga.edu.vn/ctdt/chuong-trinh-dao-tao-nganh-ky-thuat-co-dien-tu" target="_blank" rel="noopener noreferrer">Kỹ thuật Cơ điện tử</a></li>
-            <li>Kiến trúc</li>
-            <li><a href="https://cnthucpham.donga.edu.vn/chuong-trinh-dao-tao-cong-nghe-thuc-pham" target="_blank" rel="noopener noreferrer">Công nghệ thực phẩm</a></li>
-            <li><a href="https://cnthucpham.donga.edu.vn/chuong-trinh-dao-tao-nong-nghiep-cnc" target="_blank" rel="noopener noreferrer">Nông nghiệp</a></li>
-            <li><a href="https://cnthucpham.donga.edu.vn/chuong-trinh-dao-tao-nganh-thu-y" target="_blank" rel="noopener noreferrer">Thú Y</a></li>
-            <li><a href="" target="_blank" rel="noopener noreferrer">Công nghệ sinh học</a></li>
-          </ul>
-        </article>
-
         <div class="major-stack">
+          <!-- Khối Kỹ thuật -->
+          <article class="card major-card">
+            <h3>Kỹ thuật</h3>
+            <ul>
+              <li><a href="https://oto.donga.edu.vn/o-to" target="_blank" rel="noopener noreferrer">Công nghệ kỹ thuật ô tô</a></li>
+              <li><a href="https://cntt.donga.edu.vn/ctdt/cntt-2025" target="_blank" rel="noopener noreferrer">Công nghệ thông tin</a></li>
+              <li><a href="https://cntt.donga.edu.vn/ctdt/nganh-kythuatmaytinh" target="_blank" rel="noopener noreferrer">Kỹ thuật máy tính</a></li>
+              <li><a href="https://ai.donga.edu.vn/dao-tao/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">Trí tuệ nhân tạo</a></li>
+              <li><a href="https://mtud.donga.edu.vn/nganh-dao-tao/do-hoa" target="_blank" rel="noopener noreferrer">Đồ hoạ</a></li>
+              <li><a href="https://dien.donga.edu.vn/dao-tao-tu-dong-hoa" target="_blank" rel="noopener noreferrer">Công nghệ kỹ thuật điều khiển & tự động hoá</a></li>
+              <li><a href="https://dien.donga.edu.vn/dao-tao-dien-tu" target="_blank" rel="noopener noreferrer">Công nghệ kỹ thuật Điện - Điện tử</a></li>
+              <li><a href="https://xaydung.donga.edu.vn/dao-tao-cnkt-xay-dung" target="_blank" rel="noopener noreferrer">Công nghệ kỹ thuật Xây dựng</a></li>
+              <li><a href="https://oto.donga.edu.vn/ctdt/chuong-trinh-dao-tao-nganh-ky-thuat-co-dien-tu" target="_blank" rel="noopener noreferrer">Kỹ thuật Cơ điện tử</a></li>
+              <li><a href="https://cnthucpham.donga.edu.vn/chuong-trinh-dao-tao-cong-nghe-thuc-pham" target="_blank" rel="noopener noreferrer">Công nghệ thực phẩm</a></li>
+              <li><a href="https://cnthucpham.donga.edu.vn/chuong-trinh-dao-tao-nong-nghiep-cnc" target="_blank" rel="noopener noreferrer">Nông nghiệp</a></li>
+              <li><a href="https://cnthucpham.donga.edu.vn/chuong-trinh-dao-tao-nganh-thu-y" target="_blank" rel="noopener noreferrer">Thú Y</a></li>
+              <li><a href="" target="_blank" rel="noopener noreferrer">Công nghệ sinh học</a></li>
+            </ul>
+          </article>
+
           <!-- Khối luật -->
           <article class="card major-card compact">
             <h3>Luật</h3>
             <ul>
               <li><a href="https://luat.donga.edu.vn/luat" target="_blank" rel="noopener noreferrer">Luật</a></li>
               <li><a href="https://luat.donga.edu.vn/Chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">Luật kinh tế</a></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="major-stack">
+          <!-- Khối Kinh doanh & Quản lý -->
+          <article class="card major-card">
+            <h3>Kinh doanh & Quản lý</h3>
+            <ul>
+              <li><a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/Quan-tri-kinh-doanh" target="_blank" rel="noopener noreferrer">Quản trị Kinh doanh</a></li>
+              <li><a href="https://marketing.donga.edu.vn/Nganh-dao-tao/Marketing" target="_blank" rel="noopener noreferrer">Marketing</a></li>
+              <li><a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/Logistics" target="_blank" rel="noopener noreferrer">Logistics và Quản lý chuỗi cung ứng</a></li>
+              <li><a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/thuong-mai-dien-tu" target="_blank" rel="noopener noreferrer">Thương mại điện tử</a></li>
+              <li><a href="https://ketoan.donga.edu.vn/dao-tao-ke-toan" target="_blank" rel="noopener noreferrer">Kế toán</a></li>
+              <li><a href="https://ketoan.donga.edu.vn/tai-chinh-ngan-hang" target="_blank" rel="noopener noreferrer">Tài chính ngân hàng</a></li>
+              <li><a href="https://kinhte.donga.edu.vn/chuong-trinh-dao-tao/kinh-doanh-quoc-te" target="_blank" rel="noopener noreferrer">Kinh doanh quốc tế</a></li>
+              <li><a href="https://marketing.donga.edu.vn/Nganh-dao-tao/Truyen-thong-da-phuong-tien" target="_blank" rel="noopener noreferrer">Truyền thông đa phương tiện</a></li>
+              <li><a href="https://quantri.donga.edu.vn/ctdt/quan-tri-nhan-luc" target="_blank" rel="noopener noreferrer">Quản trị nhân lực</a></li>
             </ul>
           </article>
 
@@ -1065,16 +1072,39 @@
           </article>
         </div>
 
-        <!-- Khối Tâm lý & Sư phạm -->
-        <article class="card major-card">
-          <h3>Tâm lý & Sư phạm</h3>
-          <ul>
-            <li><a href="#" title="Đang mở">Giáo dục học (Đang mở)</a></li>
-            <li><a href="https://supham.donga.edu.vn/chuong-trinh-dao-tao-tam-ly-hoc" target="_blank" rel="noopener noreferrer">Tâm lý học</a></li>
-            <li><a href="https://supham.donga.edu.vn/thong-tin-chi-tiet/nganh-quan-ly-van-hoa---co-hoi-cho-su-nghiep-thang-hoa-28662" target="_blank" rel="noopener noreferrer">Quản lý văn hoá</a></li>
-            <li><a href="https://supham.donga.edu.vn/chuong-trinh-dao-tao-nganh-van-hoc-ung-dung" target="_blank" rel="noopener noreferrer">Văn học (Ứng dụng)</a></li>
-          </ul>
-        </article>
+        <div class="major-stack">
+          <!-- Khối ngôn ngữ -->
+          <article class="card major-card">
+            <h3>Ngôn ngữ</h3>
+            <ul>
+              <li><a href="https://ngonngutrung.donga.edu.vn/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">Ngôn ngữ Trung Quốc</a></li>
+              <li><a href="https://ngoaingu.donga.edu.vn/ngon-ngu-anh-kd" target="_blank" rel="noopener noreferrer">Ngôn ngữ Anh</a></li>
+              <li><a href="https://ngonnguhan.donga.edu.vn/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">Ngôn ngữ Hàn Quốc</a></li>
+              <li><a href="https://ngonngunhat.donga.edu.vn/chuong-trinh-dao-tao" target="_blank" rel="noopener noreferrer">Ngôn ngữ Nhật</a></li>
+            </ul>
+          </article>
+
+          <!-- Khối Du lịch - Nhà hàng - Khách sạn -->
+          <article class="card major-card">
+            <h3>Du lịch - Nhà hàng - Khách sạn</h3>
+            <ul>
+              <li><a href="https://dulich.donga.edu.vn/Quan-tri-dich-vu-du-lich-lu-hanh" target="_blank" rel="noopener noreferrer">Quản trị dịch vụ du lịch và lữ hành</a></li>
+              <li><a href="https://dulich.donga.edu.vn/quan-tri-khach-san" target="_blank" rel="noopener noreferrer">Quản trị khách sạn</a></li>
+              <li><a href="https://dulich.donga.edu.vn/QT-nha-hang-dich-vu-an-uong" target="_blank" rel="noopener noreferrer">Quản trị nhà hàng và dịch vụ ăn uống</a></li>
+            </ul>
+          </article>
+
+          <!-- Khối Tâm lý & Sư phạm -->
+          <article class="card major-card">
+            <h3>Tâm lý & Sư phạm</h3>
+            <ul>
+              <li><a href="#" title="Đang mở">Giáo dục học</a></li>
+              <li><a href="https://supham.donga.edu.vn/chuong-trinh-dao-tao-tam-ly-hoc" target="_blank" rel="noopener noreferrer">Tâm lý học</a></li>
+              <li><a href="https://supham.donga.edu.vn/thong-tin-chi-tiet/nganh-quan-ly-van-hoa---co-hoi-cho-su-nghiep-thang-hoa-28662" target="_blank" rel="noopener noreferrer">Quản lý văn hoá</a></li>
+              <li><a href="https://supham.donga.edu.vn/chuong-trinh-dao-tao-nganh-van-hoc-ung-dung" target="_blank" rel="noopener noreferrer">Văn học (Ứng dụng)</a></li>
+            </ul>
+          </article>
+        </div>
       </div>
     </div>
   </section>
